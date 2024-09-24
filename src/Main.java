@@ -6,24 +6,24 @@ import java.util.Comparator;
 
 public class Main {
     public void main(String[] args) {
-        Game game = new Game();
-        game.printBoard();
-
-        while (true) {
-            System.out.println("Ход игрока " + game.currentPlayer );
-            System.out.print("Введи позицию (0-8): ");
-            int position = Integer.parseInt(System.console().readLine());
-            game.play(position);
-            game.printBoard();
-
-            if (game.isWinner()) {
-                System.out.println("Игрок " + game.currentPlayer + " победил");
-                break;
-            } else if (game.isBoardFull()) {
-                System.out.println("Ничья");
-                break;
-            }
-        }
+//        Game game = new Game();
+//        game.printBoard();
+//
+//        while (true) {
+//            System.out.println("Ход игрока " + game.currentPlayer );
+//            System.out.print("Введи позицию (0-8): ");
+//            int position = Integer.parseInt(System.console().readLine());
+//            game.play(position);
+//            game.printBoard();
+//
+//            if (game.isWinner()) {
+//                System.out.println("Игрок " + game.currentPlayer + " победил");
+//                break;
+//            } else if (game.isBoardFull()) {
+//                System.out.println("Ничья");
+//                break;
+//            }
+//        }
     }
 //    //Задача1
 //    class Person{
@@ -437,105 +437,105 @@ public class Main {
 //    }
 //}
         //Задача 19
-class Device{
-        String brand;
-        void turnOn(){
-
-        }
-        void turnOff(){
-
-        }
-}
-class SmartPhone extends  Device{
-    @Override
-    void turnOff() {
-        super.turnOff();
-    }
-
-    @Override
-    void turnOn() {
-        super.turnOn();
-    }
-    void takePhoto(){
-
-    }
-}
-class Laptop extends  Device{
-    @Override
-    void turnOff() {
-        super.turnOff();
-    }
-
-    @Override
-    void turnOn() {
-        super.turnOn();
-    }
-    void takePhoto(){
-
-    }
-}
-        //Задача 20
-class  Game{
-    private char[] board;
-    private char currentPlayer;
-
-    public Game() {
-        board = new char[9];
-        for (int i = 0; i < 9; i++) {
-            board[i] = ' ';
-        }
-        currentPlayer = 'X';
-    }
-
-    public void play(int position) {
-        if (board[position] == ' ') {
-            board[position] = currentPlayer;
-            if (currentPlayer == 'X') {
-                currentPlayer = 'O';
-            } else {
-                currentPlayer = 'X';
-            }
-        } else {
-            System.out.println("Это место уже занято. Попробуй ещё раз.");
-        }
-    }
-
-    public boolean isWinner() {
-        // Проверяем строки
-        if ((board[0] == board[1] && board[1] == board[2] && board[0] != ' ') ||
-                (board[3] == board[4] && board[4] == board[5] && board[3] != ' ') ||
-                (board[6] == board[7] && board[7] == board[8] && board[6] != ' ')) {
-            return true;
-        }
-        // Проверяем столбцы
-        if ((board[0] == board[3] && board[3] == board[6] && board[0] != ' ') ||
-                (board[1] == board[4] && board[4] == board[7] && board[1] != ' ') ||
-                (board[2] == board[5] && board[5] == board[8] && board[2] != ' ')) {
-            return true;
-        }
-        // Проверяем диагонали
-        if ((board[0] == board[4] && board[4] == board[8] && board[0] != ' ') ||
-                (board[2] == board[4] && board[4] == board[6] && board[2] != ' ')) {
-            return true;
-        }
-        return false;
-    }
-
-    public boolean isBoardFull() {
-        for (int i = 0; i < 9; i++) {
-            if (board[i] == ' ') {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public void printBoard() {
-        System.out.println("-------------");
-        for (int i = 0; i < 9; i += 3) {
-            System.out.println("| " + board[i] + " | " + board[i + 1] + " | " + board[i + 2] + " |");
-            System.out.println("-------------");
-        }
-    }
-}
+//class Device{
+//        String brand;
+//        void turnOn(){
+//
+//        }
+//        void turnOff(){
+//
+//        }
+//}
+//class SmartPhone extends  Device{
+//    @Override
+//    void turnOff() {
+//        super.turnOff();
+//    }
+//
+//    @Override
+//    void turnOn() {
+//        super.turnOn();
+//    }
+//    void takePhoto(){
+//
+//    }
+//}
+//class Laptop extends  Device{
+//    @Override
+//    void turnOff() {
+//        super.turnOff();
+//    }
+//
+//    @Override
+//    void turnOn() {
+//        super.turnOn();
+//    }
+//    void takePhoto(){
+//
+//    }
+//}
+//        //Задача 20
+//class  Game{
+//    private char[] board;
+//    private char currentPlayer;
+//
+//    public Game() {
+//        board = new char[9];
+//        for (int i = 0; i < 9; i++) {
+//            board[i] = ' ';
+//        }
+//        currentPlayer = 'X';
+//    }
+//
+//    public void play(int position) {
+//        if (board[position] == ' ') {
+//            board[position] = currentPlayer;
+//            if (currentPlayer == 'X') {
+//                currentPlayer = 'O';
+//            } else {
+//                currentPlayer = 'X';
+//            }
+//        } else {
+//            System.out.println("Это место уже занято. Попробуй ещё раз.");
+//        }
+//    }
+//
+//    public boolean isWinner() {
+//        // Проверяем строки
+//        if ((board[0] == board[1] && board[1] == board[2] && board[0] != ' ') ||
+//                (board[3] == board[4] && board[4] == board[5] && board[3] != ' ') ||
+//                (board[6] == board[7] && board[7] == board[8] && board[6] != ' ')) {
+//            return true;
+//        }
+//        // Проверяем столбцы
+//        if ((board[0] == board[3] && board[3] == board[6] && board[0] != ' ') ||
+//                (board[1] == board[4] && board[4] == board[7] && board[1] != ' ') ||
+//                (board[2] == board[5] && board[5] == board[8] && board[2] != ' ')) {
+//            return true;
+//        }
+//        // Проверяем диагонали
+//        if ((board[0] == board[4] && board[4] == board[8] && board[0] != ' ') ||
+//                (board[2] == board[4] && board[4] == board[6] && board[2] != ' ')) {
+//            return true;
+//        }
+//        return false;
+//    }
+//
+//    public boolean isBoardFull() {
+//        for (int i = 0; i < 9; i++) {
+//            if (board[i] == ' ') {
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
+//
+//    public void printBoard() {
+//        System.out.println("-------------");
+//        for (int i = 0; i < 9; i += 3) {
+//            System.out.println("| " + board[i] + " | " + board[i + 1] + " | " + board[i + 2] + " |");
+//            System.out.println("-------------");
+//        }
+//    }
+//}
 }
